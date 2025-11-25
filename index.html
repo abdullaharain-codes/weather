@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherSphere | Real-time Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/partly-cloudy-day--v1.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-cloud-sun"></i> WeatherSphere</h1>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </div>
+            </div>
+            <div class="date-time" id="date-time"></div>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button id="location-btn"><i class="fas fa-location-arrow"></i> My Location</button>
+                <button id="unit-toggle-btn"><i class="fas fa-temperature-low"></i> °C/°F</button>
+            </div>
+
+            <div class="weather-display">
+                <div class="current-weather">
+                    <div class="weather-icon-container">
+                        <img id="weather-icon" src="https://openweathermap.org/img/wn/01d@2x.png" alt="Weather icon">
+                        <div class="weather-animation" id="weather-animation"></div>
+                    </div>
+                    <div class="weather-info">
+                        <h2 id="city-name">Search for a city</h2>
+                        <div class="temperature-container">
+                            <div class="temperature" id="temperature">--°C</div>
+                            <div class="temp-minmax">
+                                <span id="temp-max">↑--°</span>
+                                <span id="temp-min">↓--°</span>
+                            </div>
+                        </div>
+                        <div class="description" id="description">--</div>
+                    </div>
+                </div>
+
+                <div class="details">
+                    <div class="detail">
+                        <i class="fas fa-temperature-high"></i>
+                        <span>Feels Like</span>
+                        <span id="feels-like">--°C</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-tint"></i>
+                        <span>Humidity</span>
+                        <span id="humidity">--%</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-wind"></i>
+                        <span>Wind</span>
+                        <span id="wind">-- km/h</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-compress-alt"></i>
+                        <span>Pressure</span>
+                        <span id="pressure">-- hPa</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-eye"></i>
+                        <span>Visibility</span>
+                        <span id="visibility">-- km</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-sun"></i>
+                        <span>UV Index</span>
+                        <span id="uv-index">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast-container">
+                <h3><i class="fas fa-calendar-alt"></i> 5-Day Forecast</h3>
+                <div class="forecast" id="forecast"></div>
+            </div>
+
+            <div class="air-quality-container" id="air-quality-container">
+                <h3><i class="fas fa-smog"></i> Air Quality</h3>
+                <div class="air-quality" id="air-quality">
+                    <div class="aqi-value" id="aqi-value">--</div>
+                    <div class="aqi-level" id="aqi-level">--</div>
+                    <div class="aqi-details" id="aqi-details"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Created with <i class="fas fa-heart"></i> for Portfolio | Uses OpenWeather API</p>
+            <p class="refresh-info">Last updated: <span id="last-updated">--</span></p>
+        </footer>
+    </div>
+
+    <div class="notification" id="notification"></div>
+    <div class="loader" id="loader"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
