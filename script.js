@@ -1,7 +1,7 @@
 // OpenWeather API Key - Replace with your own key
 const API_KEY = '4cdd486714f2fbe3ff1243ebf5842dbf';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
-const GEOCODE_URL = 'http://api.openweathermap.org/geo/1.0/direct';
+const GEOCODE_URL = 'https://api.openweathermap.org/geo/1.0/direct';
 
 // DOM Elements
 const cityInput = document.getElementById('city-input');
